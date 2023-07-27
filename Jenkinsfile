@@ -13,7 +13,7 @@ agent any
 		{
 			steps{
 				withMaven(maven : 'maven3.9.3') {
-						bat 'mvn clean compile'
+						sh 'mvn clean compile'
 				}
 			}
 		}
@@ -21,14 +21,14 @@ agent any
 		{
 			steps{
 				withMaven(maven : 'maven3.9.3') {
-						bat 'mvn clean test'
+						sh 'mvn clean test'
 				}
 			} 
 		}
 		stage ('Install Stage') {
 			steps{
 				withMaven(maven : 'maven3.9.3') {
-						bat 'mvn clean install'
+						sh 'mvn clean install'
 				}
 			} 
 		} 
